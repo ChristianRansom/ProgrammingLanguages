@@ -3,9 +3,7 @@
 //This scanner is designed for a grammar that consists of only numbers and decimal numbers.
 public class ScannerMinimalDFA {
 
-
-
-   public boolean scan(String input) {
+   public static boolean scan(String input) {
 
       char[] inputStream = input.toCharArray();
       char state = 'a';
@@ -49,7 +47,8 @@ public class ScannerMinimalDFA {
                      state = 'c';
                      break;
                   default:
-                     System.out.print("ERROR STATE A ERROR - An invalid token was found! SYSTEM SHUTDOWN");
+                     System.out.println("ERROR IN STATE A ERROR - An invalid token was found! SYSTEM SHUTDOWN");
+                     return false;
                }
                break; //break from state a
             case 'b':
@@ -88,11 +87,13 @@ public class ScannerMinimalDFA {
                      state = 'd';
                      break;
                   default:
-                     System.out.print("ERROR STATE B ERROR - An invalid token was found! SYSTEM SHUTDOWN");
+                     System.out.println("ERROR IN STATE B ERROR - An invalid token was found! SYSTEM SHUTDOWN");
+                     return false;
                }
-               if (i + 1 == input.length()) {
-                  System.out.print("The scanner has recieved an integer");
-               }
+//               if (i + 1 == input.length()) {
+//                  System.out.println("The scanner has received an integer");
+//                  return true;
+//               }
                break; //break from state b
             case 'c':
                switch (currentChar) { //Replicated/Redundant code is used here to emphasize the use of Minimal DFA
@@ -127,7 +128,8 @@ public class ScannerMinimalDFA {
                      state = 'd';
                      break;
                   default:
-                     System.out.print("ERROR STATE C ERROR - An invalid token was found! SYSTEM SHUTDOWN");
+                     System.out.println("ERROR IN STATE C ERROR - An invalid token was found! SYSTEM SHUTDOWN");
+                     return false;
                }
                break; //break from state c
             case 'd':
@@ -163,12 +165,13 @@ public class ScannerMinimalDFA {
                      state = 'd';
                      break;
                   default:
-                     System.out.print("ERROR STATE D ERROR - An invalid token was found! SYSTEM SHUTDOWN");
+                     System.out.println("ERROR IN STATE D ERROR - An invalid token was found! SYSTEM SHUTDOWN");
+                     return false;
                }
                break; //break from state d
             }
          }
-      System.out.print("A valid Token was found");
+      System.out.println("A valid Token was found");
       return true;
    }
 }
