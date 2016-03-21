@@ -11,6 +11,9 @@ public class ScannerTester {
       while(loop.toLowerCase().equals("yes")) {
          System.out.print("Enter a real number: ");
          input = keyboard.next();
+         System.out.print("Running Table Driven Scanner: ");
+         ScannerTableDriven.scan(input);
+         System.out.print("Running Minimal DFA Scanner: ");
          ScannerMinimalDFA.scan(input);
          System.out.print("\nEnter 'yes' to continue: ");
          loop = keyboard.next();

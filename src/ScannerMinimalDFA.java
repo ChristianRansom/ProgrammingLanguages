@@ -171,7 +171,7 @@ public class ScannerMinimalDFA {
                break; //break from state d
             }
          }
-      System.out.println("A valid Token was found");
+      System.out.println("A valid Token was found!");
       return true;
    }
 }
